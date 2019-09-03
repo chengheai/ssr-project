@@ -1,17 +1,15 @@
 <template>
-  <div class="container">
     <div>
       <logo />
       <h5 class="title">
-        <nuxt-link to="/user/list">
-          用户列表
+        <nuxt-link to="/swiper">
+          swiper
         </nuxt-link>
       </h5>
       <h5 class="subtitle">
         {{ title }}
       </h5>
     </div>
-  </div>
 </template>
 
 <script>

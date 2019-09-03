@@ -24,18 +24,21 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css', 'assets/main.css'],
+  css: ['element-ui/lib/theme-chalk/index.css', 'assets/main.css','swiper/dist/css/swiper.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+  plugins: [
+    {src:'@/plugins/element-ui'},
+    {src:'@/plugins/nuxt-swiper-plugin', ssr: false},
+  ],
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
   /*
    ** Axios module configuration
