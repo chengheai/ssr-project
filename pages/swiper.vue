@@ -1,6 +1,7 @@
 <template>
   <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
   <div>
+    <el-page-header @back="goBack" content="轮播页面"></el-page-header>
     <h1>{{cuindex}}</h1>
     <div v-swiper:mySwiper="swiperOption" key="1">
       <div class="swiper-wrapper">
@@ -83,6 +84,11 @@ export default {
       // },
     };
   },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
+  },
   mounted() {},
 };
 </script>
@@ -91,9 +97,11 @@ export default {
 <style lang="less" scoped>
 .my-swiper {
   height: 500px;
-  width: 600;
-  margin: a auto;
+  width: 600px;
+  margin: 0 auto;
   .swiper-slide {
+    height: 500px;
+    width: 600px;
     text-align: center;
     font-size: 38px;
     font-weight: 700;

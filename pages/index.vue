@@ -1,67 +1,63 @@
 <template>
-    <div>
-      <logo />
-      <h5 class="title">
-        <nuxt-link to="/swiper">
-          swiper
-        </nuxt-link>
-      </h5>
-      <h5 class="subtitle">
-        {{ title }}
-      </h5>
+  <div class="dashboard">
+    <el-header height="50">SSR &nbsp;DEMO</el-header>
+    <div class="menus">
+      <el-button type="primary">    <NuxtLink to="/swiper">
+      swiper page
+    </NuxtLink></el-button>
+      <el-button type="success">成功按钮</el-button>
+      <el-button type="info">信息按钮</el-button>
+      <el-button type="warning">警告按钮</el-button>
+      <el-button type="danger">危险按钮</el-button>
     </div>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  },
   data() {
     return {
-      title: 'Hello World!'
-    }
+      title: '首页',
+    };
   },
   head() {
     return {
       title: this.title,
-      meta: [{ hid: 'description', name: 'description', content: 'My custom description' }]
-    }
-  }
-}
+      meta: [{ hid: 'description', name: 'description', content: 'My custom description' }],
+    };
+  },
+};
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 30px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang='less' scoped>
+.dashboard {
+  width: 100%;
+  height: 100vh;
+  background: url('./../assets/bg.jpg') no-repeat;
+  background-size: cover;
+  .el-header {
+    font-size: 24px;
+    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: -1px;
+    background: #046fa0;
+    padding: 10px 0;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+  }
+  .menus {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 50px 20px;
+    .el-button{
+      a{
+        font-style: normal;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 </style>
