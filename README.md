@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -18,5 +18,8 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+\$ npm start
+pm2 start npm --name "ssr-project" -- run start
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
