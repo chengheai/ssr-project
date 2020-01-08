@@ -23,3 +23,13 @@ $ yarn generate
 pm2 start npm --name "ssr-project" -- run start
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## docker 部署
+### 
+$ docker build -t test-ssr .
+
+$ docker run -d --name ssr-server -p 3000:3000 test-ssr
+ssr-server: 容器名称
+test-ssr: 镜像
+关闭
+$ docker stop ssr-server
