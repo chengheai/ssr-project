@@ -1,8 +1,11 @@
 FROM node:10.11.0
-RUN mkdir -p /app
-COPY . /app
-WORKDIR /app
-RUN npm install
+WORKDIR /opt
+# RUN npm install
+# RUN npm run build
+ADD node_modules /opt/node_modules
+ADD .nuxt /opt/.nuxt
+ADD static /opt/static
+ADD nuxt.config.js /opt
+ADD package.json /opt
 EXPOSE 3000
-RUN npm run build
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
